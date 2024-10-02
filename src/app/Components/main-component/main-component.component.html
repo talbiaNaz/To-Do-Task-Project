@@ -11,7 +11,7 @@
   <div class="w-full h-full flex justify-center items-center mt-8 gap-8">
     <!-- Add List Component -->
     <div 
-    [ngClass]="{'border-4 border-cyan-700': activeComponent === 'add-list',}"
+    [ngClass]="{'border-4 border-cyan-700': activeComponent === 'add-list' ,}"
     class="w-[300px] h-[400px] bg-slate-200 rounded shadow-xl flex items-center justify-center">
       <add-list (sendString)="fetchData($event)"></add-list>
     </div>

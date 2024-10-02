@@ -16,6 +16,7 @@ export class DeleteListComponent {
 @Output() delTaskList = new EventEmitter<number>();
 
   deleteTask(){
+    this.listno=this.listno-1;
      this.delTaskList.emit(this.listno);
   }
 }
