@@ -1,0 +1,39 @@
+<div class="w-screen h-screen bg-slate-300 flex flex-col">
+  <!-- Navbar Section -->
+  <nav class="w-full bg-cyan-700 h-[100px] gap-10 flex justify-center items-center">
+    <button class="bg-purple-300 w-[150px] h-[50px] text-xl font-semibold" (click)="setActiveComponent('add-list')" >Go To Add List</button>
+    <button class="bg-purple-300 w-[150px] h-[50px] text-xl font-semibold" (click)="setActiveComponent('show-list')">Go To Show List</button>
+    <button class="bg-purple-300 w-[170px] h-[50px] text-xl font-semibold" (click)="setActiveComponent('update-list')">Go To Update List</button>
+    <button class="bg-purple-300 w-[170px] h-[50px] text-xl font-semibold" (click)="setActiveComponent('delete-list')">Go To Delete List</button>
+  </nav>
+
+  <!-- Main Content Section -->
+  <div class="w-full h-full flex justify-center items-center mt-8 gap-8">
+    <!-- Add List Component -->
+    <div 
+    [ngClass]="{'border-4 border-cyan-700': activeComponent === 'add-list',}"
+    class="w-[300px] h-[400px] bg-slate-200 rounded shadow-xl flex items-center justify-center">
+      <add-list (sendString)="fetchData($event)"></add-list>
+    </div>
+
+    <!-- Show List Component -->
+    <div 
+    [ngClass]="{'border-4 border-cyan-700': activeComponent === 'show-list'}"
+    class="w-[300px] h-[400px] bg-slate-200 rounded shadow-xl flex items-center justify-center">
+      <show-list [taskList]="list"></show-list>
+    </div>
+
+    <!-- Update List Component -->
+    <div 
+    [ngClass]="{'border-4 border-cyan-700': activeComponent === 'update-list'}"
+    class="w-[300px] h-[400px] bg-slate-200 rounded shadow-xl flex items-center justify-center">
+      <update-list (updateValue)="gettingUpdateSting($event)"></update-list>
+    </div>
+
+    <div 
+    [ngClass]="{'border-4 border-cyan-700': activeComponent === 'delete-list'}"
+    class="w-[300px] h-[400px] bg-slate-200 rounded shadow-xl flex items-center justify-center">
+      <delete-list (delTaskList)="delTaskFromList($event)"></delete-list>
+    </div>
+  </div>
+</div>

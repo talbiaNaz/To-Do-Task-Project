@@ -1,0 +1,16 @@
+.task-list {
+    max-height: 200px; /* Set maximum height according to your layout */
+    overflow-y: auto;  /* Enable vertical scroll */
+    padding-right: 10px; /* To prevent scrollbar overlap */
+  }
+  
+  /* Optional: Styling for scrollbar */
+  .task-list::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .task-list::-webkit-scrollbar-thumb {
+    background-color: #00A0E3;
+    border-radius: 10px;
+  }
+  
